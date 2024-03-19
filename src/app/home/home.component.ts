@@ -19,6 +19,8 @@ import {
   IonNav,
   IonFab,
   IonFabButton,
+  IonCol,
+  IonRow,
   IonMenuButton } 
 from '@ionic/angular/standalone';
 import { UserNotificationsComponent } from './ui/user-notifications.component';
@@ -26,7 +28,7 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
 @Component({
   selector: 'app-home',
   template: `
-    <ion-header [translucent]="true"  class="ion-no-border">
+    <ion-header >
         <ion-toolbar>
           <ion-buttons slot="start">
             <ion-menu-button class="toolbar-light-theme" slot="start"></ion-menu-button>
@@ -44,12 +46,17 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
       <app-user-notifications></app-user-notifications>
 
     <ion-content>
+      <ion-row>
+        <ion-col>
+          <h1 class="capitalize">Welcome to Plano</h1>
+          <strong class="capitalize ion-padding-bottom">The easy way to load your presets for Sunday</strong>
+          <img class="ion-padding-bottom ion-padding-top" src="../assets/HelixPlanoLogo.png" alt="">
+          <strong class="capitalize">Home</strong>
+          <p class="ion-padding-bottom">Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quo distinctio expedita. Numquam qui magni, ullam animi adipisci molestiae asperiores quam. Molestiae modi incidunt excepturi voluptatibus? Nesciunt, ex quasi libero alias quia perferendis! Repudiandae numquam hic animi laudantium nulla soluta iure natus rem maiores assumenda neque inventore exercitationem cum nemo pariatur non recusandae quam, commodi aut repellat, magni sunt reiciendis! Cupiditate hic vel reprehenderit natus cum atque quisquam. Possimus, animi. Inventore vero veritatis ea, non numquam ex perferendis animi facere cumque eveniet, ad tempore nobis, odio fugiat aspernatur aliquid! Eum fuga ducimus qui accusantium dolores incidunt omnis, quos laboriosam mollitia, nisi aliquam aspernatur sit earum laborum. Cumque adipisci quia iure, ea officia rerum laudantium expedita corporis excepturi fugit vero voluptate numquam, molestias alias nobis repellat nulla aut optio soluta blanditiis ipsa assumenda, perspiciatis in! Vero assumenda molestias aut pariatur ut cupiditate sed, ipsa ipsam, non libero dignissimos culpa eius fugit quam quaerat, voluptas accusamus cum nostrum repellendus repellat blanditiis nesciunt tempora nulla soluta. Odit molestiae consequatur voluptates dignissimos itaque. Nam dolores atque ratione ipsa non, repudiandae temporibus itaque exercitationem? Quidem quod autem optio vero voluptate illum in cum explicabo eligendi aliquid voluptatem, dolorem quae similique sint ducimus iste quibusdam eius fuga nobis. Atque id vitae quasi quam? Quibusdam ipsa repellendus quae magni nisi numquam, corrupti totam dolorem sint saepe ea ullam. Distinctio, laudantium tempore. In praesentium fugit nesciunt, animi quas eaque architecto quasi delectus corporis ea deserunt deleniti ad natus sequi alias cupiditate laboriosam, obcaecati incidunt reiciendis eos quo odit repellendus ipsum quos! Voluptate veniam sapiente inventore ullam autem rerum pariatur aperiam quia, repellendus eius odio excepturi eos, sint, facilis molestiae iusto commodi accusantium provident harum atque quam dolorem! Hic laboriosam dolorem ipsa. Necessitatibus cum beatae dolores! Explicabo consequuntur exercitationem ea similique, quisquam eum aperiam asperiores pariatur dignissimos. A, nemo.</p>
+        </ion-col>
+      </ion-row>
       <div id="container">
-        <h1 >Welcome to Plano</h1>
-        <strong class="capitalize ion-padding-bottom capitalize">The easy way to load your presets for Sunday</strong>
-        <img class="ion-padding-bottom ion-padding-top" src="../assets/HelixPlanoLogo.png" alt="">
-        <strong class="capitalize">Home</strong>
-        <p class="ion-padding-bottom">Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
 
@@ -58,30 +65,7 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
     ion-menu-button {
       color: var(--ion-color-primary);
     }
-  #container {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-    color: #8c8c8c;
-    margin: 0;
-  }
-
-  #container a {
-    text-decoration: none;
-  }
+  
   `],
   standalone: true,
   imports: [
@@ -103,7 +87,9 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
     IonFab,
     IonFabButton,
     RouterLink,
-    UserNotificationsComponent
+    UserNotificationsComponent,
+    IonCol,
+    IonRow,
   ],
 })
 export class HomeComponent {

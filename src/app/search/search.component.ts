@@ -24,7 +24,7 @@ from '@ionic/angular/standalone';
 @Component({
   selector: 'app-search',
   template: `
-    <ion-header class="ion-no-border">
+    <ion-header>
         <ion-toolbar>
             <ion-buttons slot="start">
               <ion-back-button class="toolbar-light-theme" defaultHref="/home"></ion-back-button>

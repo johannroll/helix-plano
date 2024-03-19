@@ -124,14 +124,6 @@ import { ToastService } from "../shared/services/toast-service/toast-service.ser
             margin-top: 8px;
         }
 
-        ion-toolbar {
-            height: 62px;
-        }
-
-        ion-back-button {
-           margin-top: 0.7rem;
-        }
-
         ion-spinner {
             height: 21px;
             margin: 0 0;
