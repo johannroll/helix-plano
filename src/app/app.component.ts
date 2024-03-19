@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { 
   IonApp,
@@ -22,6 +22,10 @@ import {
   IonNote } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { alarm, logoIonic, search, logInOutline, heart } from 'ionicons/icons';
+import { NetworkService } from './shared/services/network-service/network.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { tap } from 'rxjs';
+import { ToastService } from './shared/services/toast-service/toast-service.service';
 
 
 @Component({
@@ -195,6 +199,8 @@ ion-item.selected {
   ],
 })
 export class AppComponent {
+  networkService = inject(NetworkService)
+  toastService = inject(ToastService)
 
   public appPages = [
     { title: 'Login', url: '/login', icon: 'log-in-outline' },
@@ -204,5 +210,28 @@ export class AppComponent {
   ];
   constructor() {
     addIcons({ alarm, logoIonic, search, logInOutline, heart });
+
+    this.networkService.checkConnection$.pipe(takeUntilDestroyed(), tap((status) => console.log('Network status: ', status))).subscribe((online) => {
+      this.networkService.state.update((state) => ({
+          ...state,
+          online: online,
+          connectionCount: state.connectionCount + 1
+      }))
+    })
+
+    effect(() => {
+        const network = this.networkService.isOnline();
+        
+        if (!network) {
+            this.toastService.errorToast('No internet connection')
+        }
+
+        if ( network && this.networkService.connectionCount() > 1) {
+          this.toastService.successToast('Internet connection restored');
+          setTimeout(() => {
+              this.networkService.refresh();
+            }, 1500)
+        }
+    })
   }
 }
