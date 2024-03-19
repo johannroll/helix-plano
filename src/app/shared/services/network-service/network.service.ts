@@ -1,4 +1,4 @@
-import { Injectable, computed, signal } from "@angular/core";
+import { Injectable, NgZone, computed, signal } from "@angular/core";
 import { BehaviorSubject, map } from "rxjs";
 
 export interface NetworkStatusState {
@@ -25,9 +25,9 @@ export class NetworkService {
         map((status) => status)
     );
 
-    constructor() {
-        window.addEventListener('online', this.updateNetworkStatus.bind(this))
-        window.addEventListener('offline', this.updateNetworkStatus.bind(this))
+    constructor(private zone: NgZone) {
+        window.addEventListener('online', () => this.zone.run(() => this.updateNetworkStatus()));
+        window.addEventListener('offline', () => this.zone.run(() => this.updateNetworkStatus()));
     }
 
     updateNetworkStatus() {
