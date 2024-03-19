@@ -45,13 +45,13 @@ from '@ionic/angular/standalone';
         color: var(--ion-color-primary);
     }
 
-    ion-toolbar {
-        height: 62px;
-    }
+    // ion-toolbar {
+    //     height: 62px;
+    // }
 
-    ion-back-button {
-        margin-top: 0.7rem;
-    }
+    // ion-back-button {
+    //     margin-top: 0.7rem;
+    // }
 
     #container {
         text-align: center;

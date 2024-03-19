@@ -5,16 +5,20 @@ import {
     IonContent,
     IonList,
     IonItem,
-    IonFabButton
+    IonFabButton,
+    IonFab
 } from '@ionic/angular/standalone'
 
 
 @Component({
     selector: 'app-user-notifications',
     template: `
-        <ion-fab-button  translucent="true" size="small" id="popover-button">
-            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-        </ion-fab-button>
+        <ion-fab slot="fixed" vertical="top" horizontal="end">
+            <ion-fab-button  translucent="true" size="small" id="popover-button">
+                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            </ion-fab-button>
+        </ion-fab>
+     
         <ion-popover trigger="popover-button" [dismissOnSelect]="true">
             <ng-template>
                 <ion-content>
@@ -45,7 +49,8 @@ import {
         IonContent,
         IonList,
         IonItem,
-        IonFabButton
+        IonFabButton,
+        IonFab
     ]
 })
 
