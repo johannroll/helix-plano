@@ -279,3 +279,11 @@ ion-menu ion-content {
   .success-toast {
     color: #fff !important;
   }
+
+  ion-content {
+    width: calc(100% + 15px);
+  }
+
+  ion-content::part(scroll) {
+    padding-right: 15px;
+  }
