@@ -45,8 +45,11 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
 
     <ion-content>
       <div id="container">
+        <h1 >Welcome to Plano</h1>
+        <strong class="capitalize ion-padding-bottom capitalize">The easy way to load your presets for Sunday</strong>
+        <img class="ion-padding-bottom ion-padding-top" src="../assets/HelixPlanoLogo.png" alt="">
         <strong class="capitalize">Home</strong>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <p class="ion-padding-bottom">Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
 
