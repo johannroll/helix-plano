@@ -280,10 +280,9 @@ ion-menu ion-content {
     color: #fff !important;
   }
 
-//   html.plt-mobileweb.ios {
-//     height: 101vh;
-//     max-height: none;
-//     overflow-y: scroll;
-// }
+  html {
+    height: 101vh !important;
+    max-height: none !important;
+    overflow-y: scroll !important;
+}
 
-html{position: relative; height: 100%; overflow: hidden;}
