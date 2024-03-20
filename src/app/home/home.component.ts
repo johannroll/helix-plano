@@ -46,7 +46,7 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
 
     <ion-content>
       <ion-row>
-        <ion-col>
+        <ion-col class="ion-padding">
           <h1 class="capitalize">Welcome to Plano</h1>
           <strong class="capitalize ion-padding-bottom">The easy way to load your presets for Sunday</strong>
           <img class="ion-padding-bottom ion-padding-top" src="../assets/HelixPlanoLogo.png" alt="">
