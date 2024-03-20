@@ -25,12 +25,6 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-body {
-    /* This might not be effective on all browsers and can have unintended side effects */
-    height: 100%;
-    height: -webkit-fill-available;
-  }
-
 ion-menu ion-content {
     --background: var(--ion-item-background, var(--ion-background-color, #fff));
   }
@@ -285,9 +279,50 @@ ion-menu ion-content {
     color: #fff !important;
   }
 
-//   html {
-//     height: 101vh !important;
-//     max-height: none !important;
-//     overflow-y: scroll !important;
-// }
+  ion-toolbar {
+    height: 52px;
+    padding: 0px;
+    margin: 0px;
+  }
 
+  .toolbar-container {
+    height: 52px;
+    display: flex !important;
+    align-items: center !important;
+    padding-bottom: 8px !important;
+  }
+
+  .btn-back-topPad {
+    min-height: 100%;
+    min-width: 100%;
+    padding-top: 8px !important;
+  }
+
+  ion-split-pane {
+    --side-width: 270px;
+    --side-max-width: 280px;
+  
+    // --border: 1px dashed #b3baff;
+  }
+
+  ion-toast {
+    --max-width: 450px;
+  }
+
+
+  @media (min-width: 992px) {
+    ion-toast {
+        width: 450px;
+        left: 270px;
+    }
+  }
+
+  ion-card {
+    max-width: 400px;
+    min-width: 340px;
+  }
+
+  .center-content {
+    display: flex;
+    justify-content: center;
+  }

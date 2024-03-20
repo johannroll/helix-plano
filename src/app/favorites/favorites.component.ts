@@ -27,7 +27,7 @@ from '@ionic/angular/standalone';
     <ion-header>
         <ion-toolbar>
             <ion-buttons slot="start">
-              <ion-back-button class="toolbar-light-theme" defaultHref="/home"></ion-back-button>
+              <ion-back-button class="toolbar-light-theme btn-back-topPad" defaultHref="/home"></ion-back-button>
             </ion-buttons>
         </ion-toolbar>
       </ion-header>
@@ -44,14 +44,6 @@ from '@ionic/angular/standalone';
    ion-menu-button {
         color: var(--ion-color-primary);
     }
-
-    // ion-toolbar {
-    //     height: 62px;
-    // }
-
-    // ion-back-button {
-    //     margin-top: 0.7rem;
-    // }
 
     #container {
         text-align: center;

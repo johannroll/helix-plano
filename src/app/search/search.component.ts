@@ -26,12 +26,12 @@ from '@ionic/angular/standalone';
   template: `
     <ion-header>
         <ion-toolbar>
+          <div class="toolbar-container">
             <ion-buttons slot="start">
-              <ion-back-button class="toolbar-light-theme" defaultHref="/home"></ion-back-button>
+              <ion-back-button class="toolbar-light-theme btn-back-topPad" defaultHref="/home"></ion-back-button>
             </ion-buttons>
-        </ion-toolbar>
-        <ion-toolbar>
-          <ion-searchbar class="ion-no-border" animated="true" [debounce]="600" placeholder="search" (ionInput)="searchTerm.set($event.target.value)"></ion-searchbar>
+            <ion-searchbar animated="true" [debounce]="600" placeholder="search" (ionInput)="searchTerm.set($event.target.value)"></ion-searchbar>
+          </div>
         </ion-toolbar>
     </ion-header>
         
@@ -61,6 +61,13 @@ from '@ionic/angular/standalone';
     </ion-content>
   `,
   styles: [`
+    ion-searchbar {
+      width: calc(100% - 60px); /* Adjust based on the back button width */
+      margin-left: auto; /* This pushes the search bar to the right */
+      padding-top: 8px !important;
+      padding-bottom: 0px !important;
+    }
+
   `]
   ,
   standalone: true,

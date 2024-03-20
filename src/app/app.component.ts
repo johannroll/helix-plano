@@ -230,7 +230,7 @@ export class AppComponent {
           this.toastService.successToast('Internet connection restored');
           setTimeout(() => {
               this.networkService.refresh();
-            }, 1500)
+            }, 1700)
         }
     })
   }

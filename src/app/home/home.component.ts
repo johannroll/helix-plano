@@ -29,21 +29,20 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
   selector: 'app-home',
   template: `
     <ion-header >
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-menu-button class="toolbar-light-theme" slot="start"></ion-menu-button>
-          </ion-buttons>
-          <!-- <ion-fab-button translucent="true" size="small">
-              <img src="../assets/PlanoLogo.png" alt="Plano logo image">
-          </ion-fab-button> -->
-          <ion-buttons slot="start">  
-            <ion-button routerLink="/search">
-              <ion-icon class="toolbar-light-theme" slot="icon-only" name="search"></ion-icon>
-            </ion-button>
-          </ion-buttons>
+      <ion-toolbar>
+        <div class="toolbar-container">
+            <ion-buttons slot="start">
+              <ion-menu-button class="toolbar-light-theme" slot="start"></ion-menu-button>
+            </ion-buttons>
+            <ion-buttons slot="start">
+              <ion-button routerLink="/search">
+                <ion-icon class="toolbar-light-theme" slot="icon-only" name="search"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <app-user-notifications class="user-fab"></app-user-notifications>
+          </div>
         </ion-toolbar>
       </ion-header>
-      <app-user-notifications></app-user-notifications>
 
     <ion-content>
       <ion-row>
@@ -64,6 +63,11 @@ import { UserNotificationsComponent } from './ui/user-notifications.component';
   styles: [`
     ion-menu-button {
       color: var(--ion-color-primary);
+    }
+
+    .user-fab {
+      margin-right: 8px;
+      margin-left: auto;
     }
   
   `],

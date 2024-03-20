@@ -38,68 +38,71 @@ import { ToastService } from "../shared/services/toast-service/toast-service.ser
     template: `
       <ion-header>
         <ion-toolbar>
-            <ion-buttons class="btn-back" slot="start" justify-center>
-              <ion-back-button class="toolbar-light-theme" defaultHref="/home"></ion-back-button>
-            </ion-buttons>
+            <div class="toolbar-container">
+                <ion-buttons slot="start">
+                  <ion-back-button class="toolbar-light-theme" defaultHref="/home"></ion-back-button>
+                </ion-buttons>
+            </div>
         </ion-toolbar>
       </ion-header>
 
       <ion-content [fullscreen]="true">
         <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col size="12" size-xl="5" size-lg="5" size-md="6" size-sm="8">
-                <ion-card >
-                    <ion-card-header>
-                        <ion-card-title>Login</ion-card-title>
-                        <ion-card-subtitle>Planning Centre</ion-card-subtitle>
-                    </ion-card-header>
-    
-                    <ion-card-content class="ion-margin-top">
-                        <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
-                            <ion-list lines="none">
-                                <ion-item >
-                                    <ion-input
-                                        class="ion-margin-bottom"
-                                        formControlName="email"
-                                        type="email"
-                                        fill="clear"
-                                        label="Email"
-                                        labelPlacement="floating"
-                                        placeholder="email@domain.com"
-                                        errorText="Invalid email"                
-                                    ></ion-input>
-                                </ion-item>
-                                <ion-item class="ion-margin-top">
-                                    <ion-input
-                                        class="ion-margin-bottom" 
-                                        formControlName="password"
-                                        [type]="showPassword ? 'text' : 'password'"  
-                                        fill="clear" 
-                                        labelPlacement="floating" 
-                                        label="Password" placeholder=""
-                                        placeholder="password"
-                                        errorText="Invalid password"
-                                        >
-                                    </ion-input>
-                                    <ion-button color="primary" fill="clear" slot="end" aria-label="Show/hide" (click)="toggleShowPassword()">
-                                        <ion-icon slot="icon-only" [name]="showPassword ? 'eye-off' : 'eye' " aria-hidden="true"></ion-icon>
+                <div class="center-content">
+                    <ion-card >
+                        <ion-card-header>
+                            <ion-card-title>Login</ion-card-title>
+                            <ion-card-subtitle>Planning Centre</ion-card-subtitle>
+                        </ion-card-header>
+                        <ion-card-content class="ion-margin-top">
+                            <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+                                <ion-list lines="none">
+                                    <ion-item >
+                                        <ion-input
+                                            class="ion-margin-bottom"
+                                            formControlName="email"
+                                            type="email"
+                                            fill="clear"
+                                            label="Email"
+                                            labelPlacement="floating"
+                                            placeholder="email@domain.com"
+                                            errorText="Invalid email"
+                                        ></ion-input>
+                                    </ion-item>
+                                    <ion-item class="ion-margin-top">
+                                        <ion-input
+                                            class="ion-margin-bottom"
+                                            formControlName="password"
+                                            [type]="showPassword ? 'text' : 'password'"
+                                            fill="clear"
+                                            labelPlacement="floating"
+                                            label="Password" placeholder=""
+                                            placeholder="password"
+                                            errorText="Invalid password"
+                                            >
+                                        </ion-input>
+                                        <ion-button color="primary" fill="clear" slot="end" aria-label="Show/hide" (click)="toggleShowPassword()">
+                                            <ion-icon slot="icon-only" [name]="showPassword ? 'eye-off' : 'eye' " aria-hidden="true"></ion-icon>
+                                        </ion-button>
+                                    </ion-item>
+                                </ion-list>
+                                <p class="forgot-password"><a target="_blank" rel="noopener noreferrer" href="https://login.planningcenteronline.com/password_reset/new">Forgot password</a></p>
+                                <ion-button
+                                    type="submit"
+                                    [disabled]="!loginForm.valid || loading"
+                                    class="ion-padding-top ion-margin-top"
+                                    fill="solid" expand="block">
+                                    @if (loading) {
+                                        <ion-spinner name="circular"></ion-spinner>
+                                    } @else {
+                                        Login
+                                    }
                                     </ion-button>
-                                </ion-item>
-                            </ion-list>
-                            <p class="forgot-password"><a target="_blank" rel="noopener noreferrer" href="https://login.planningcenteronline.com/password_reset/new">Forgot password</a></p>
-                            <ion-button 
-                                type="submit" 
-                                [disabled]="!loginForm.valid || loading"  
-                                class="ion-padding-top ion-margin-top" 
-                                fill="solid" expand="block">
-                                @if (loading) {
-                                    <ion-spinner name="circular"></ion-spinner>
-                                } @else {
-                                    Login
-                                }
-                                </ion-button>
-                        </form>
-                    </ion-card-content>
-                </ion-card>
+                            </form>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
             </ion-col>
         </ion-row>
       </ion-content>
@@ -107,7 +110,6 @@ import { ToastService } from "../shared/services/toast-service/toast-service.ser
     styles: [`
         p a {
             text-decoration: none;
-            // color: #fff;
         }
 
         ion-list {
