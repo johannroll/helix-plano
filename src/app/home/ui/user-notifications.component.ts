@@ -6,8 +6,11 @@ import {
     IonList,
     IonItem,
     IonFabButton,
-    IonFab
+    IonFab,
+    IonIcon
 } from '@ionic/angular/standalone'
+import { addIcons } from 'ionicons';
+import { personCircleOutline } from 'ionicons/icons'
 
 
 @Component({
@@ -15,7 +18,7 @@ import {
     template: `
         <ion-fab slot="fixed" vertical="top" horizontal="end">
             <ion-fab-button  translucent="true" size="small" id="popover-button">
-                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                <ion-icon name="person-circle-outline"></ion-icon>
             </ion-fab-button>
         </ion-fab>
      
@@ -50,10 +53,13 @@ import {
         IonList,
         IonItem,
         IonFabButton,
-        IonFab
+        IonFab,
+        IonIcon
     ]
 })
 
 export class UserNotificationsComponent {
-
+    constructor() {
+        addIcons({ personCircleOutline });
+    }
 }
