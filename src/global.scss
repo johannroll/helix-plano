@@ -280,10 +280,8 @@ ion-menu ion-content {
     color: #fff !important;
   }
 
-  ion-content {
-    width: calc(100% + 15px);
-  }
-
-  ion-content::part(scroll) {
-    padding-right: 15px;
-  }
+  html.plt-mobileweb.ios {
+    height: 101vh;
+    max-height: none;
+    overflow-y: scroll;
+}
