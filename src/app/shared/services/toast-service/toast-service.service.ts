@@ -1,5 +1,6 @@
 import { Injectable, inject } from "@angular/core";
 import { ToastController } from '@ionic/angular';
+import { defineCustomElement as defineToast } from '@ionic/core/components/ion-toast';
 
 @Injectable({
     providedIn: 'root'
@@ -7,6 +8,10 @@ import { ToastController } from '@ionic/angular';
 
 export class ToastService {
     toastController = inject(ToastController)
+
+    constructor() {
+        defineToast();
+    }
 
     async notifyToast( message: string) {
         const toast = await this.toastController.create({
